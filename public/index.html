@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <title>Chat With Deva</title>
   </head>
-  <body>
+  <body onload="focus()">
     <div>
-      <h3>
-        Devashish
-      </h3>
+      <h3 id="title"></h3>
     </div>
+    <form id="chat-form">
+      <input id="txt-message" type="text" name="message" />
+      <button id="btn-send" type="submit">Send</button>
+    </form>
+    <label id="lbl-message" ></label>
     <script src="./js/jquery-3.2.1.min.js"></script>
     <script src="./js/socket.io.js"></script>
     <script src="./js/index.js"></script>
+    <script>
+    function focus() {
+      document.querySelector('#txt-message').focus();
+    }
+    </script>
   </body>
 </html>

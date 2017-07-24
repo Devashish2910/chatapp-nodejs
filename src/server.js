@@ -8,7 +8,9 @@ app.use(express.static(__dirname + './../public'));
 
 io.on('connection', (socket) => {
   socket.on('message', (message) => {
-    socket.broadcast.emit('message', message);
+    io.emit('message', message);
+    // To everyone except me
+    //socket.broadcast.emit('message', message);
   })
 
   socket.emit('MessageFromDeveloper', {
